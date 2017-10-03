@@ -1,0 +1,66 @@
+.App {
+    text-align: center;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.32);
+    border: 2px solid #167F92;
+}
+
+thead,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-thead-tr {
+    font-size: 1.2em;
+}
+
+tr:nth-child(even) {
+    background-color: #D9E4E6;
+}
+
+thead {
+    background-color: #167F92;
+    color: white;
+}
+
+.table-thead-tr>td {
+    cursor: pointer;
+}
+
+.TableRow-username {
+    text-align: left;
+}
+
+.user-photo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #167F92;
+    border-radius: 10px;
+}
+
+.user-photo:hover {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+}
+
+.username-link {
+    color: black;
+    text-decoration: none;
+}
+
+.TableRow-imagetd {
+    padding: 0px;
+}
