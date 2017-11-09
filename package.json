@@ -2,7 +2,7 @@
   "name": "camper-leaderboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://paspheeris.github.io/FreeCodeCamp/camper-leaderboard",
+  "homepage": "https://paspheeris.github.io/camper-leaderboard",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

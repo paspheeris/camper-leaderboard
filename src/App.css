@@ -50,12 +50,6 @@ thead {
     border-radius: 10px;
 }
 
-.user-photo:hover {
-    height: inherit;
-    width: inherit;
-    position: absolute;
-}
-
 .username-link {
     color: black;
     text-decoration: none;
