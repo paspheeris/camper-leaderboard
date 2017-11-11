@@ -13,7 +13,6 @@ export function loadCampers() {
     //fccApi.getCampers returns a promise
     .then(campers => {
     //dispatch an action creator once we get the campers back from the api
-    // console.log(campers);
     dispatch(loadCampersSuccess(campers));
   })
     .catch(error => {
