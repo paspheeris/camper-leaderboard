@@ -23,34 +23,47 @@ class Table extends React.Component {
       })
     }
   }
-  cb = () => {
-    this.props.sortBy === SORT_TYPES.ALL_TIME_DESC ?
-      this.props.sort(SORT_TYPES.ALL_TIME_ASC) :
-      this.props.sort(SORT_TYPES.ALL_TIME_DESC)
+  cb = (section) => {
+      const currentSort = this.props.sortBy;
+      if(section === 'name') {
+          currentSort === SORT_TYPES.NAME_DESC
+          ? this.props.sort(SORT_TYPES.NAME_ASC)
+          : this.props.sort(SORT_TYPES.NAME_DESC);
+      }
+      else if(section === 'past30') {
+          currentSort === SORT_TYPES.PAST_30_DESC
+          ? this.props.sort(SORT_TYPES.PAST_30_ASC)
+          : this.props.sort(SORT_TYPES.PAST_30_DESC)
+      }
+      else if(section === 'allTime') {
+          currentSort === SORT_TYPES.ALL_TIME_DESC
+          ? this.props.sort(SORT_TYPES.ALL_TIME_ASC)
+          : this.props.sort(SORT_TYPES.ALL_TIME_DESC);
+               }
+      /* this.props.sortBy === SORT_TYPES.ALL_TIME_DESC ?
+       *   this.props.sort(SORT_TYPES.ALL_TIME_ASC) :
+       *   this.props.sort(SORT_TYPES.ALL_TIME_DESC)*/
   }
     chooseImage = (section, currentSort) => {
         /* const currentSort = this.props.sortBy;*/
         const down = "caret-down.svg";
         const up = "caret-up.svg";
         const right = "caret-right.svg";
-                console.log('currentSort:', currentSort);
-                console.log('section:', section);
+        /* console.log('currentSort:', currentSort);
+         * console.log('section:', section);*/
         switch(section) {
             case 'name':
                 if(currentSort === SORT_TYPES.NAME_DESC) return down;
                 else if (currentSort === SORT_TYPES.NAME_ASC) return up;
                 else return right;
-                break;
             case 'past30':
                 if(currentSort === SORT_TYPES.PAST_30_DESC) return down;
                 else if (currentSort === SORT_TYPES.PAST_30_ASC) return up;
                 else return right;
-                break;
             case 'allTime':
                 if(currentSort === SORT_TYPES.ALL_TIME_DESC) return down;
                 else if (currentSort === SORT_TYPES.ALL_TIME_ASC) return up;
                 else return right;
-                break;
             default: return right;
         }
         /* return right;*/
@@ -64,19 +77,19 @@ class Table extends React.Component {
           <tr className="table-thead-tr">
             <td>#</td>
             <td className='profile-pic-column'></td>
-            <td onClick={this.cb}>
+            <td onClick={() => this.cb('name')}>
                 Camper Name
                 <img className="caret"
                      src={this.chooseImage('name', sortBy)}
                      alt="caret" />
             </td>
-            <td onClick={this.cb}>
+            <td onClick={() => this.cb('past30')}>
                 Points in past 30 days
                 <img className="caret"
                      src={this.chooseImage('past30', sortBy)}
                      alt="caret" />
             </td>
-            <td onClick={this.cb}>
+            <td onClick={() => this.cb('allTime')}>
                 All time points
                 <img className="caret"
                      src={this.chooseImage('allTime', sortBy)}
