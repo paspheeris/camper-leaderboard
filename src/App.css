@@ -23,6 +23,9 @@ td {
 .table-thead-tr {
     font-size: 1.2em;
 }
+.table-thead-tr>td:last-child {
+    padding-right: 1em;
+}
 
 tr:nth-child(even) {
     background-color: #D9E4E6;
